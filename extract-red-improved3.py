@@ -1,37 +1,22 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Mar  7 14:36:31 2019
-
-@author: bhula-wesolekhousehold
-"""
-import sys
 import pandas as pd
 import os
 
-#directory=sys.argv[1]
 
-#%%
 def redlineisolator(filename):
-    data = pd.read_csv(directory+"/"+filename, index_col=6, header=None)
-    data.index.rename("date",inplace=True)
-    data=data[data[0]=='Red']
-    data['ontime']=data[9]/data[10]
-    data=data.loc[:,[7,'ontime']]
-    return data.groupby(by=7)
-#%%
+    data = pd.read_csv(directory+"/"+filename, index_col=6, header=None) #import csv file. Column 6 is the date column.
+    data.index.rename("date",inplace=True)#rename index as date
+    data=data[data[0]=='Red'] #isolate all rows pertaining to redline
+    data['ontime']=data[9]/data[10] #make a new column which gives ontime percentage
+    data=data.loc[:,[7,'ontime']] #throw away all columns except the column for the peak/off peak designation and ontime percent.
+    return data.groupby(by=7) #group data into peak and off peak frames
+
 def weathercleaner():
-#Import csv file and set index to be 'Day' column
-    w_data=pd.read_csv("2018-weather-data.csv", index_col=['Day'])
-#Renames columns
+    w_data=pd.read_csv("2018-weather-data.csv", index_col=['Day']) #import csv file and set index to be 'Day' column
     w_data=w_data.rename(columns={'High\n\n(°F)':'high','Low\n\n(°F)':'low',
                                   'Precip.\n\n(inch)':'precip',
-                                  'Snow\n\n(inch)':'snow'})
-#Properly format index
-    w_data.index=pd.to_datetime(w_data.index)
-#Eliminate all columns except temperature and precipitation columns.
-    w_data=w_data.loc[:,['high','low','precip','snow']]
-
+                                  'Snow\n\n(inch)':'snow'})#renames columns
+    w_data.index=pd.to_datetime(w_data.index)#properly format index
+    w_data=w_data.loc[:,['high','low','precip','snow']]#eliminate all columns except temperature and precipitation columns.
     return w_data
 
 def main_loop():
@@ -44,7 +29,7 @@ def main_loop():
         df_op=redlineisolator(filename).get_group('OFF_PEAK')
         framesp.append(df_p)
         framesop.append(df_op)
-#Put peak and offpeak dataframes together into a peak fram and an off peak frame
+#Put peak and offpeak dataframes together into a peak frame and an off peak frame
     peak_data=pd.concat(framesp)
     offpeak_data=pd.concat(framesop)
 #Merge peak_data with weathedata and offpeak_data with weatherdata 
