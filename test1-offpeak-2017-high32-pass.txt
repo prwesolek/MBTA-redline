@@ -1,8 +1,0 @@
-The mean on-time performance on days with high above 32 is 0.9283435397669413.
-The standard deviation of the on-time performance on days with high above 32 is 0.028529115026745926.
-
-The mean on-time performance on days with high below or equal 32 is 0.8781368633739266.
-The standard deviation of the on-time performance on days with high below or equal 32is0.06675058812503774.
-
-With 95% confidence the mean on-time performance with high temps BELOW 32 is worse than the mean on-time performance with high temps ABOVE 32. This test is for time-year offpeak-2017.
-
