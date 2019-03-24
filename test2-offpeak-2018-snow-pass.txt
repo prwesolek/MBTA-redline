@@ -1,8 +1,0 @@
-The mean on-time performance on days with snow is 0.910319791359648.
-The standard deviation of the on-time performance on days with snow is 0.022101255972321033.
-
-The mean on-time performance on days withOUT snow is 0.8979875197678113.
-The standard deviation of the on-time performance on days withOUT snow is 0.022101255972321033.
-
-With 95% confidence the mean on-time performance on days with snow is better than the mean on-time performance on days withOUT snow. This test is for time-year offpeak-2018.
-
