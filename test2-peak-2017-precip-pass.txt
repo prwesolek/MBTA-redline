@@ -1,8 +1,0 @@
-The mean on-time performance on days with precip is 0.9330922788847298.
-The standard deviation of the on-time performance on days with precip is 0.020769811077854635.
-
-The mean on-time performance on days withOUT precip is 0.9277514474645484.
-The standard deviation of the on-time performance on days withOUT precip is 0.020769811077854635.
-
-With 90% confidence the mean on-time performance on days with precip is better than the mean on-time performance on days withOUT precip. This test is for time-year peak-2017.
-
