@@ -1,0 +1,10 @@
+Summer is defined to be April, May, June, July, August, September, October, and November. Winter is defined to be December, January, Feburary, and March.
+
+The mean on-time performance on summer days for peak-2018 is 0.9011079747054518.
+The standard deviation of the on-time performance on summer days for peak-2018 is 0.06164141432691155.
+
+The mean on-time performance on winter days for peak-2018 is 0.9112943354343711.
+The standard deviation of the on-time performance on winter days for peak-2018 is 0.03281226990908504.
+
+With 90% confidence the mean on-time performance in winter is better than the mean  on-time performance in summer. This test is for time-year peak-2018.
+
