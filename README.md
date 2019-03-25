@@ -33,5 +33,7 @@ Test results:
 (5) The test here failed for all data sets. We cannot reject or conclude the hypothesis.
 
 
-Conclusions: The result of our test for hypothesis (1) is good, and we are justifyed in concluding that hypothesis (1) indeed holds. Given the mixed or failure results for hypotheses (2),(3), (4), and (5), I feel more data or better analysis is needed to accept or reject any of these hypotheses.
+Conclusions: The result of our test for hypothesis (1) is good, and we are justifyed in concluding that hypothesis (1) indeed holds. Given the mixed or failure results for hypotheses (2),(3), (4), and (5), I feel more data or better analysis is needed to accept or reject any of these hypotheses. 
+
+Recomendations for further analysis: The data should be combined and the tests run on the combined data set. This may give us more power and avoid test failures. New hypotheses should be formulated to test if weather has a larger affects on offpeak performance or peak performance.
 
