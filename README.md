@@ -5,7 +5,7 @@ The extract-red-improved3.py is a python script to be ran from the command line.
 
 
 
-We now test several hypotheses about our data.
+We test several hypotheses about our data:
 
 (1) Ontime performance for days with high temps above 32 is better than ontime performance for days with high temps below 32.
 
@@ -33,5 +33,5 @@ Test results:
 (5) The test here failed for all data sets. We cannot reject or conclude the hypothesis.
 
 
-Conclusions: The results of our tests for hypothesis (1) are good, and we are justifyed in concluding that hypothesis (1) indeed holds. Given the mixed or failure results for hypotheses (2),(3), (4), and (5), I feel more data or better analysis is needed to accept or reject any of these hypotheses.
+Conclusions: The result of our test for hypothesis (1) is good, and we are justifyed in concluding that hypothesis (1) indeed holds. Given the mixed or failure results for hypotheses (2),(3), (4), and (5), I feel more data or better analysis is needed to accept or reject any of these hypotheses.
 
