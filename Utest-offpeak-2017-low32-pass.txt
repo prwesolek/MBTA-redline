@@ -1,0 +1,8 @@
+The mean on-time performance on days with low above 32 is 0.9280267256988883.
+The standard deviation of the on-time performance on days with low above 32 is 0.03024464153927321.
+
+The mean on-time performance on days with low below or equal 32 is 0.9199845066638963.
+The standard deviation of the on-time performance on days with low below or equal 32is0.038537538063632394.
+
+With 95% confidence the on-time performance with low temps ABOVE 32 is better than the on-time performance with low temps BELOW 32. This test is for time-year offpeak-2017.
+
