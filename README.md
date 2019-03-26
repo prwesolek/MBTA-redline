@@ -1,7 +1,7 @@
 # MBTA-redline
 This project aims to determine what weather factors - e.g. temperature or precipitation - impact the MBTA redline ontime performance. 
 
-The extract-red-improved3.py is a python script to be ran from the command line.  The script combines and cleans the raw data from the directory year-ontime-performance and the weather data year-weather-data.csv and outputs two csv files peak-year.csv and offpeak-year.csv. The outputs contain the ontime percent, high temperature, low temperature, precipitation, and snow for each day. The peak-year.csv file contains the data for the peak hours while the offpeak-year.csv contains the data for the off-peak hours. Note that weekends and holidays do not have peak hours, so these dates are omitted in peak-year.csv. 
+The extract-red-improved3.py is a python script to be ran from the command line.  The script combines and cleans the raw data from the directory year-ontime-performance and the weather data year-weather-data.csv and outputs two csv files peak-year.csv and offpeak-year.csv. The outputs contain the ontime percent, high temperature, low temperature, precipitation, and snow for each day for peak hours and offpeak hours, respectively. Note that weekends and holidays do not have peak hours, so these dates are omitted in peak-year.csv. 
 
 
 
