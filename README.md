@@ -17,7 +17,7 @@ We test several hypotheses about our data:
 
 (5)  Ontime performance for days in summer (april, may, june, july, august, september, october, and november) is better than ontime performance for days in winter (december, january, february, march).
 
-We will test the hypotheses for four data sets: 2018 peak hours ontime performance, 2018 offpeak hours ontime performance, 2017 peak hours ontime performance, and 2017 offpeak hours ontime performance. The python script testerU.py tests these hypotheses via the Mann-Whitney U-test; we use the U-test because the data do not appear to be normally distributed. The script is to be ran from the command line and takes one input; the input should be one of the csv files  offpeak-year.csv and peak-year.csv. The script will ask for a temperature input, so the user is welcome to play around with other temperatures. If the U-test is successful, a report is written into a txt file. Otherwise a failure notice is printed to the command line. 
+We will test the hypotheses on four data sets: 2018 peak hours ontime performance, 2018 offpeak hours ontime performance, 2017 peak hours ontime performance, and 2017 offpeak hours ontime performance. The python script testerU.py tests these hypotheses via the Mann-Whitney U-test; we use the U-test because the data do not appear to be normally distributed. The script is to be ran from the command line and takes one input, which is to be one of the csv files  offpeak-year.csv and peak-year.csv. The script will ask for a temperature input, so the user is welcome to play around with other temperatures. If the U-test is successful, a report is written into a txt file. Otherwise a failure notice is printed to the command line. 
 
 
 Test results:
@@ -35,5 +35,5 @@ Test results:
 
 Conclusions: The result of our test for hypothesis (1) is good, and we are justified in concluding that hypothesis (1) indeed holds. Given the mixed or failure results for hypotheses (2),(3), (4), and (5), I feel more data or better analysis is needed to accept or reject any of these hypotheses. 
 
-Recommendations for further analysis: The data should be combined and the tests run on the combined data set. This may give us more power and avoid test failures. New hypotheses should be formulated to test if weather has a larger affect on offpeak performance or peak performance.
+Recommendations for further analysis: The data should be combined and the tests run on the combined data set. This may give us more power and avoid test failures. New hypotheses should be formulated to test if weather has a larger affect on offpeak ontime performance or peak ontime performance.
 
