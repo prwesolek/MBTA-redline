@@ -5,7 +5,7 @@ import scipy
 
 
     #These write some basic stats into an outfile for the various tests. These could probably be combined into 
-    #one function, but I am lazy.
+    #one function.
 def basicinfowritertime(outfilename,mean1, mean2,std1,std2,year):
     outfilename.write("Summer is defined to be April, May, June, July, August, September, October, and November."+
                       " Winter is defined to be December, January, Feburary, and March.\n\n")
