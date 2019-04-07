@@ -10,7 +10,7 @@ The python script extract-clean.py is to be ran from the command line.  The scri
 
 
 <h3>Analysis script details</h3>
-<p>The python script testerU.py tests several hypotheses via the Mann-Whitney U-test; we use the U-test because the data do not appear to be normally distributed. The script is to be ran from the command line and takes one input, which is to be one of the csv files  clean-files-year/offpeak-year.csv and clean-files-year/peak-year.csv. The script will ask for a temperature input. If the U-test is successful, a report is written into a txt file in the directory test-results-year. If the U-test is unsuccessful a failure notice is printed to the command line. 
+<p>The python script testerU.py tests several hypotheses via the Mann-Whitney U-test; we use the U-test because the data do not appear to be normally distributed as discussed in the normality explore section. The script is to be ran from the command line and takes one input, which is to be one of the csv files  clean-files-year/offpeak-year.csv and clean-files-year/peak-year.csv. The script will ask for a temperature input. If the U-test is successful, a report is written into a txt file in the directory test-results-year. If the U-test is unsuccessful a failure notice is printed to the command line. 
 </p>
 
 <h3> Hypotheses tested </h3>
@@ -27,6 +27,9 @@ The python script extract-clean.py is to be ran from the command line.  The scri
 <li> Ontime performance for days in summer (april, may, june, july, august, september, october, and november) is better than ontime performance for days in winter (december, january, february, march).</li>
 </ol>
 </p>
+
+<h3> Normality explorer</h3>
+<p> The script norm-explorer2.py checks if the temperature data sets are normally distributed. This program is to be ran from the command line. When ran it will ask for the year and temperature at which you would like to test normality. It applies the D'agostino and Pearson normality test to several data sets to check for normality. These data sets have the following form: the ontime performance data for peak/offpeak times on days with high/low temperatures above/below input temperature. The results are printed to the command line. Graphs are also generated which attempt to fit normal curves to the data; these graphs are written to the graphs directory. </p>
 
 <h3>Results</h3>
 <p>
