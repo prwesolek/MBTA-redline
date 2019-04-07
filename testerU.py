@@ -4,8 +4,7 @@ import statsmodels.api as sm
 import scipy
 
 
-    #These write some basic stats into an outfile for the various tests. These could probably be combined into 
-    #one function.
+    #These write some basic stats into an outfile for the various tests. These could probably be combined.
 def basicinfowritertime(outfilename,mean1, mean2,std1,std2,year):
     outfilename.write("Summer is defined to be April, May, June, July, August, September, October, and November."+
                       " Winter is defined to be December, January, Feburary, and March.\n\n")
@@ -37,7 +36,7 @@ def basicinfowritertemp(outfilename,mean1, mean2,std1,std2,name,tem):
     outfilename.write("The mean on-time performance on days with "+name+" below or equal "+tem+" is "+
                   str(mean2)+".\n")
     outfilename.write("The standard deviation of the on-time performance on days with "
-                      +name+" below or equal "+tem + "is"+str(std2)+".\n\n")
+                      +name+" below or equal "+tem + " is "+str(std2)+".\n\n")
        
      #This test checks if the on-time performance is affected by the season -  winter or summer.
 def time(filename):
@@ -51,8 +50,12 @@ def time(filename):
     if "2017" in filename:
         year="2017"
         
-    #make a string to lable outfiles
-    x=filename.strip(".csv")
+    #make a string to lable outfiles as peak or offpeak
+    tod=""
+    if 'offpeak' in filename:
+        tod='offpeak'
+    else:
+        tod='peak'
     
     #get data for winter and data for summer
     dataW=data[((data['date']>=year+'-01-01') & (data['date']<=year+'-03-31')|
@@ -76,21 +79,21 @@ def time(filename):
     sign=0 # this variable checks to see if we need to close a file at the end.
     
     #These conditions check if the p-value from the U-test is small. If so, it writes a report to a txt file.
-    #If the p-value is too large, it prints a failure notice to the command line.
+    #If the p-value is large, it prints a failure notice to the command line.
     if p<=.05:
-        outfile=open(x+"season-pass-Utest.txt",'w',)
-        basicinfowritertime(outfile,Smean,Wmean,Sstd,Wstd,x)
+        outfile=open("test-results-"+year+"/"+tod+"season.txt",'w',)
+        basicinfowritertime(outfile,Smean,Wmean,Sstd,Wstd,tod)
         outfile.write("With 95% confidence the on-time performance in summer is better than the"+
                       " on-time performance in winter."+
-                      " This test is for time-year "+x+".\n\n")
+                      " This test is for time-year "+tod+"-"+year+".\n\n")
         print("Season test successful. See output txt file.")
         sign=sign+1
     elif p<=.1:
-        outfile=open(x+"season-pass-Utest.txt",'w',)
-        basicinfowritertime(outfile,Smean,Wmean,Sstd,Wstd,x)
+        outfile=open("test-results-"+year+"/"+tod+"season.txt",'w',)
+        basicinfowritertime(outfile,Smean,Wmean,Sstd,Wstd,tod)
         outfile.write("With 90% confidence the on-time performance in summer is better than the"+
                       " on-time performance in winter."+
-                      " This test is for time-year "+x+".\n\n")
+                      " This test is for time-year "+tod+"-"+year+".\n\n")
         print("Season test successful. See output txt file.")
         sign=sign+1
 
@@ -104,8 +107,20 @@ def time(filename):
     #This test checks if precipitation or snow affect on-time performance.
 def precip(filename):
     print("running precip test...")
+    tod=""
+    if 'offpeak' in filename:
+        tod='offpeak'
+    else:
+        tod='peak'     
+    year="" 
+    if "2018" in filename:
+        year="2018"
+    if "2017" in filename:
+        year="2017"
+     
     data=pd.read_csv(filename,index_col="date")#read in csv file
-    x=filename.strip(".csv") #this variable will be used to lable outfiles
+
+           
     sign=0# this variable checks to see if we need to close a file at the end.
     
     #we run two loops. One loop tests snow and the other precipitation.
@@ -127,20 +142,20 @@ def precip(filename):
         #These conditions check if the p-value from the U-test passes. If so, it writes a report to a txt file.
         #If the p-value is too large, it prints a failure notice to the command line.
         if p<=.05:
-            outfile=open(x+"-"+sorp+"-pass-Utest.txt",'w',)
+            outfile=open("test-results-"+year+"/"+tod+"-"+sorp+".txt",'w',)
             basicinfowriterprecip(outfile,precipmean,noprecipmean,precipstd,noprecipstd,sorp)
             outfile.write("With 95% confidence the on-time performance on days withOUT "+sorp+
                           " is better than the on-time performance on days with "+sorp+
-                          ". This test is for time-year "+x+".\n\n")
+                          ". This test is for time-year "+tod+"-"+year+".\n\n")
             print("Test for precipitation type ",sorp," is successful. See output txt file.")
             sign=sign+1
         
         elif p<=.1:
-            outfile=open(x+"-"+sorp+"-pass-Utest.txt",'w',)
+            outfile=open("test-results-"+year+"/"+tod+"-"+sorp+".txt",'w',)
             basicinfowriterprecip(outfile,precipmean,noprecipmean,precipstd,noprecipstd,sorp)
             outfile.write("With 90% confidence the on-time performance on days withOUT "+sorp+
                           " is better than the on-time performance on days with "+sorp+
-                          ". This test is for time-year "+x+".\n\n")
+                          ". This test is for time-year "+tod+"-"+year+".\n\n")
             print("Test for precipitation type ",sorp," is successful. See output txt file.")
             sign=sign+1
         
@@ -155,9 +170,17 @@ def temp(filename,temp):
     print("running temp test...")
     t=str(temp)
     temp=float(temp)
-    x=filename.strip(".csv")
+    tod="peak"
+    if 'offpeak' in filename:
+        tod='offpeak'
+    year="" 
+    if "2018" in filename:
+        year="2018"
+    if "2017" in filename:
+        year="2017"
+        
     data=pd.read_csv(filename,index_col="date")
-     
+    
     sign=0
     for ht in ['high','low']:   
         aboveF=data[data[ht]>temp]
@@ -173,22 +196,22 @@ def temp(filename,temp):
         (stat,p)=scipy.stats.mannwhitneyu(aboveF['ontime'],belowF['ontime'], alternative='greater')
         
         if p<=.05:
-            outfile=open(x+"-"+ht+t+"-pass-Utest.txt",'w',)
+            outfile=open("test-results-"+year+"/"+tod+"-"+ht+t+".txt",'w',)
             basicinfowritertemp(outfile,aboveFmean,belowFmean,aboveFstd,belowFstd,ht,t)
             outfile.write("With 95% confidence the on-time performance with "+ht+" temps ABOVE "
                           +t+" is better than the on-time performance with "+
                           ht+" temps BELOW "+t+
-                          ". This test is for time-year "+x+".\n\n")
+                          ". This test is for time-year "+tod+"-"+year+".\n\n")
             print("Temp test successful for "+ht+" temp data. See output txt file.")
             sign=sign+1
 
         elif p<=.1:
-            outfile=open(x+"-"+ht+t+"-pass-Utest.txt",'w',)
+            outfile=open("test-results-"+year+"/"+tod+"-"+ht+t+".txt",'w',)
             basicinfowritertemp(outfile,aboveFmean,belowFmean,aboveFstd,belowFstd,ht,t)
             outfile.write("With 90% confidence the on-time performance with "+ht+" temps ABOVE "
                           +t+" is better than the mean on-time performance with "+
                           ht+" temps BELOW "+t+
-                          ". This test is for time-year "+x+".\n\n")
+                          ". This test is for time-year "+tod+"-"+year+".\n\n")
             print("Temp test successful for "+ht+" temp data. See output txt file. ")
             sign=sign+1
 
@@ -206,6 +229,4 @@ def main_loop(file):
     precip(file)
     
 if __name__ == '__main__':
-    infile=sys.argv[1]
-    main_loop(infile)
-    
+    main_loop(sys.argv[1])
