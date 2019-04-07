@@ -10,7 +10,7 @@ The python script extract-clean.py is to be ran from the command line.  The scri
 
 
 <h3>Analysis script details</h3>
-<p>The python script testerU.py tests several hypotheses via the Mann-Whitney U-test; we use the U-test because the data do not appear to be normally distributed as discussed in the normality explore section. The script is to be ran from the command line and takes one input, which is to be one of the csv files  clean-files-year/offpeak-year.csv and clean-files-year/peak-year.csv. The script will ask for a temperature input. If the U-test is successful, a report is written into a txt file in the directory test-results-year. If the U-test is unsuccessful a failure notice is printed to the command line. 
+<p>The python script testerU.py tests several hypotheses via the Mann-Whitney U-test; we use the U-test because the data do not appear to be normally distributed as discussed in the normality explorer section. The script is to be ran from the command line and takes one input, which is to be one of the csv files  clean-files-year/offpeak-year.csv and clean-files-year/peak-year.csv. The script will ask for a temperature input. If the U-test is successful, a report is written into a txt file in the directory test-results-year. If the U-test is unsuccessful a failure notice is printed to the command line. 
 </p>
 
 <h3> Hypotheses tested </h3>
