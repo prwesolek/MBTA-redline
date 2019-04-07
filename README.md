@@ -53,7 +53,7 @@ The python script extract-clean.py is to be ran from the command line.  The scri
 <p> 
   <ul>
     <li>The data from 2017 and 2018 should be combined and the tests run on the combined data set. This may give us more power and avoid test failures. </li>
-    <li> ew hypotheses should be formulated to test if weather has a larger affect on offpeak ontime performance or peak ontime performance.</li>
+    <li> New hypotheses should be formulated to test if weather has a larger affect on offpeak ontime performance or peak ontime performance.</li>
   </ul>
   </p>
 
