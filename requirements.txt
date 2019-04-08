@@ -1,0 +1,6 @@
+pandas
+sys
+numpy
+matplotlib.pyplot
+scipy
+matplotlib.mlab
