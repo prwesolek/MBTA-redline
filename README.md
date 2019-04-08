@@ -1,8 +1,9 @@
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/prwesolek/MBTA-redline/master) 
 <h2> MBTA-redline</h2>
 
 <h3> Overview </h3>
 <p>
-This project aims to determine what weather factors - e.g. temperature or precipitation - impact the MBTA redline ontime performance. We use the ontime date from 2017 and 2018. All scripts are designed to be ran on Python3. Click here [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/prwesolek/MBTA-redline/master) to run the jupyter notebooks.</p>
+This project aims to determine what weather factors - e.g. temperature or precipitation - impact the MBTA redline ontime performance. We use the ontime date from 2017 and 2018. All scripts are designed to be ran on Python3. Click the binder link to run the jupyter notebooks.</p>
 
 <h3> Cleaning script details</h3>
 <p>
