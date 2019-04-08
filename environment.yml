@@ -5,7 +5,5 @@ dependencies:
   - numpy
   - matplotlib
   - pandas
-  - sys
-  - matplotlib.pyplot
   - scipy
-  - matplotlib.mlab
+ 
