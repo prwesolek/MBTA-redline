@@ -1,0 +1,6 @@
+This report is for a run of the grapher on the offpeak-2018 data set with graph tolerance 0.01.
+
+Number of connected components: 4.
+
+Sizes of components: 331 23 2 5.
+

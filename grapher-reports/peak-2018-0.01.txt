@@ -1,0 +1,6 @@
+This report is for a run of the grapher on the peak-2018 data set with graph tolerance 0.01.
+
+Number of connected components: 3.
+
+Sizes of components: 251 2 2.
+
