@@ -7,4 +7,5 @@ dependencies:
   - pandas
   - scipy
   - statsmodels
+  - networkx
  
