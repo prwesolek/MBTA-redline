@@ -54,7 +54,7 @@ The python script extract-clean2.py is to be ran from the command line and when 
  </p>
  
  <h3> Grapher</h3>
- The program grapher.py builds a graph from the data for data exploration purposes. It is to be ran from the command line. When started, it will ask for the date (2017 or 2018) and the time-of-day (peak or offpeak). It will also ask for a tolerance. If two dates have ontime performance within the tolerance, the grapher draws an edge between the dates. (A tolerance of 1 percent, i.e. .01, works well; the user is welcome to play with finer tolerances.) Visualizations of the graph as well as the connected components are  are output to grapher-output. Basic reports are written to grapher-reports. 
+ The program grapher.py builds a graph from the data for data exploration purposes. It is to be ran from the command line. When started, it will ask for the date (2017 or 2018) and the time-of-day (peak or offpeak). It will also ask for a tolerance. If two dates have ontime performance within the tolerance, the grapher draws an edge between the dates. (A tolerance of 1 percent, i.e. .01, works well; the user is welcome to play with finer tolerances.) Visualizations of the graph as well as the connected components are output to grapher-output. Basic reports are written to grapher-reports. 
  
 <h3>Further analysis</h3>
 <p> 
