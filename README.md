@@ -53,10 +53,14 @@ The python script extract-clean2.py is to be ran from the command line and when 
 <p> The result of our test for hypothesis (1) is good, and we are justified in concluding that hypothesis (1) indeed holds. Given the mixed or failure results for hypotheses (2),(3), (4), and (5), I feel more data or better analysis is needed to accept or reject any of these hypotheses. 
  </p>
  
+ <h3> Grapher</h3>
+ The program grapher.py builds a graph from the data for data exploration purposes. It is to be ran from the command line. When started, it will ask for the date (2017 or 2018) and the time-of-day (peak or offpeak). It will also ask for a tolerance. If two dates have ontime performance within the tolerance, the grapher draws an edge between the dates. (A tolerance of 1 percent, i.e. .01, works well; the user is welcome to play with finer tolerances.) Visualizations of the graph as well as the connected components are  are output to grapher-output. Basic reports are written to grapher-reports. 
+ 
 <h3>Further analysis</h3>
 <p> 
   <ul>
     <li>The data from 2017 and 2018 should be combined and the tests run on the combined data set. This may give us more power and avoid test failures. </li>
+    <li> The data composing the connected components discoverd by the grapher should be explored to look for common features. </li>
     <li> New hypotheses should be formulated to test if weather has a larger affect on offpeak ontime performance or peak ontime performance.</li>
   </ul>
   </p>
